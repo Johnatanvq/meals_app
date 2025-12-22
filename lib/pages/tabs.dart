@@ -20,7 +20,6 @@ class TabsScreen extends StatefulWidget {
     return _TabsScreenState();
   }
 }
-
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedPageIndex = 0;
   final List<Meal> _favoriteMeals = [];

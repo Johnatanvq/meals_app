@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/pages/tabs.dart';
-import 'package:meals_app/widgets/main_drawer.dart';
 
 enum Filter {
   gluttenFree,
@@ -21,7 +19,6 @@ class FiltersScreen extends StatefulWidget {
     return _FilterScreenState();
   }
 }
-
 class _FilterScreenState extends State<FiltersScreen> {
   var _gluttenFreeFilterSet = false;
   var _lactoseFreeFilterSet = false;
