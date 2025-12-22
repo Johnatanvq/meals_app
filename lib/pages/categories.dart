@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:meals_app/data/dummy_data.dart';
 import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/pages/meals.dart';
@@ -10,17 +9,19 @@ class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({
     super.key,
     required this.onToggleFavorite,
+    required this.availableMeals,
   });
 
   final void Function (Meal meal) onToggleFavorite;
+  final List<Meal> availableMeals;
 
   void _selectCategory(BuildContext context, Category category) {
-    final filteredMeals = dummyMeals
+    final filteredMeals = availableMeals
     .where((meal) => meal.categories.contains(category.id))
     .toList();
 
-    Navigator.push(
-      context, MaterialPageRoute(
+    Navigator.of(context).push(
+      MaterialPageRoute(
         builder: (ctx) => MealScreen(
           title: category.title, 
           meals: filteredMeals,
