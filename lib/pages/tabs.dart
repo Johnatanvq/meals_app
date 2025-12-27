@@ -5,7 +5,7 @@ import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/pages/categories.dart';
 import 'package:meals_app/pages/filters.dart';
 import 'package:meals_app/pages/meals.dart';
-import 'package:meals_app/providers/meals.dart';
+import 'package:meals_app/providers/meals_provider.dart';
 import 'package:meals_app/widgets/main_drawer.dart';
 
 const kInitialFilters = {
