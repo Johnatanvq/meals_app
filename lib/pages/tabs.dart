@@ -5,6 +5,7 @@ import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/pages/categories.dart';
 import 'package:meals_app/pages/filters.dart';
 import 'package:meals_app/pages/meals.dart';
+import 'package:meals_app/providers/meals.dart';
 import 'package:meals_app/widgets/main_drawer.dart';
 
 const kInitialFilters = {
@@ -73,7 +74,8 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final availableMeals = dummyMeals.where((meal) {
+    final meals = ref.watch(mealsProvider);
+    final availableMeals = meals.where((meal) {
       if (_selectedFilters[Filter.gluttenFree]! && !meal.isGlutenFree) {
         return false;
       }
